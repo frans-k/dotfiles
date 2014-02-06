@@ -1,0 +1,12 @@
+#!/usr/bin/ruby
+unless File.exist?('.ruby-gemset')
+  File.open('.ruby-gemset', 'w') do |f|
+    f.write(File.basename(Dir.getwd))
+  end
+end
+
+unless File.exist?('.ruby-version')
+  File.open('.ruby-version', 'w') do |f|
+    f.write('2.0.0-p247')
+  end
+end
