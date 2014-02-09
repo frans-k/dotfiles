@@ -1,14 +1,13 @@
 #!/usr/local/bin/fish
-set fish_path $HOME/.oh-my-fish
 set -gx PATH $HOME/.pythonbrew/pythons/**/bin/ $PATH
 set -gx PATH ./node_modules/.bin $PATH
 set -gx PATH (brew --prefix)/opt/python/bin $PATH
 set -gx PATH $HOME/bin $PATH
+set -gx PATH $HOME/scripts $PATH
 set -gx PATH /Applications/Postgres93.app/Contents/MacOS/bin $PATH
 
 set fish_theme agnoster
-set fish_plugins autojump bundler rvm brew rails sublime 
-. $fish_path/oh-my-fish.fish
+set fish_plugins autojump bundler rvm brew rails sublime
 
 sh ~/.env
 
