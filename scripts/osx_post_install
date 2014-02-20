@@ -1,0 +1,71 @@
+#!/bin/bash
+
+#Disable window animations
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+#Enable repeat on keydown
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+#Disable ext change warning
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+#Disable webkit homepage
+defaults write org.webkit.nightly.WebKit StartPageDisabled -bool true
+
+# Check for software updates daily, not just once per week
+# defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+#Use current directory as default search scope in Finder
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+#Show Path bar in Finder
+defaults write com.apple.finder ShowPathbar -bool true
+
+#Disable sound effect when changing volume 
+defaults write -g com.apple.sound.beep.feedback -integer 0
+
+#Show Status bar in Finder
+defaults write com.apple.finder ShowStatusBar -bool true
+
+#Enable AirDrop over Ethernet and on unsupported Macs
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+# Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+#Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 0
+
+#Set a shorter Delay until key repeat
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+#Disable disk image verification
+defaults write com.apple.frameworks.diskimages skip-verify -bool true &&
+defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true &&
+defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
+
+#Disable Safari’s thumbnail cache for History and Top Sites
+defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
+
+#Enable Safari’s debug menu
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+
+# Disable smart quotes as it’s annoying for messages that contain code
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
+
+
+# Enable the Develop menu and the Web Inspector in Safari
+defaults write com.apple.Safari IncludeDevelopMenu -bool true &&
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true &&
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true &&
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+
+#Show the ~/Library folder
+chflags nohidden ~/Library
+
+# show absolute path in finder's title bar
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+
