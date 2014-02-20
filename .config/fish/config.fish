@@ -22,10 +22,6 @@ function fish_title
   basename (pwd)
 end
 
-function subl
-  /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $argv
-end
-
 function export
   set arr (echo $argv|tr = \n)
   echo $arr[1]
