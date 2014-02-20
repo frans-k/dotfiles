@@ -41,3 +41,4 @@ function __check_rvm --on-variable PWD --description 'Do rvm stuff'
   end
 end
 
+__check_rvm
