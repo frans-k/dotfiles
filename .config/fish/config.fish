@@ -6,6 +6,9 @@ set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/scripts $PATH
 set -gx PATH /Applications/Postgres93.app/Contents/MacOS/bin $PATH
 
+set -gx EDITOR emacs
+set -gx BUNDLER_EDITOR subl
+
 set fish_theme agnoster
 set fish_plugins autojump bundler rvm brew rails sublime
 
