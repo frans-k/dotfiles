@@ -7,3 +7,5 @@
 	default = current
 [alias]
 	co = checkout
+[branch]
+	autosetuprebase = always
