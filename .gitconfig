@@ -1,6 +1,6 @@
 [user]
 	name = Frans Krojegård
-	email = frans@krojegard.com
+	email = 
 [core]
 	excludesfile = /Users/franskrojegard/.gitignore_global
 [push]
