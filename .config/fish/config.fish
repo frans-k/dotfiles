@@ -30,11 +30,19 @@ function export
 end
 
 function __check_rvm --on-variable PWD --description 'Do rvm stuff'
-  status --is-command-substitution; and return
+  # status --is-command-substitution; and return
 
-  if test -f .ruby-gemset -a -f .ruby-version
-  	rvm use (cat .ruby-version)@(cat .ruby-gemset) --create
-  end
+  # if test -f .ruby-gemset -a -f .ruby-version
+  # 	rvm use (cat .ruby-version)@(cat .ruby-gemset) --create
+  # end
 end
 
+set -gx RBENV_ROOT /usr/local/var/rbenv
+. (rbenv init -|psub)
+
+# Needs to be after rbenv
+set -gx PATH ./bin $PATH
+
 __check_rvm
+set -x JAVA_HOME (/usr/libexec/java_home)
+set -x NEO4J_HOME /usr/local/Cellar/neo4j/2.0.2/libexec
